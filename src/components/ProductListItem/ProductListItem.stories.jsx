@@ -10,41 +10,16 @@
 import { ProductListItem } from ".";
 import { action } from "@storybook/addon-actions";
 
-export default { title: "ProductListItem" };
-export const standard = () => (
-  <ProductListItem
-    name="Standard Coffee"
-    price="2.50"
-    onAddToCart={action("Add to cart clicked")}
-    imageUrl="https://source.unsplash.com/tNALoIZhqVM/200x100/"
-  />
-);
+export default { title: "ProductListItem", component: ProductListItem };
 
-standard.args = {
+const Template = (args) => <ProductListItem {...args} />;
+
+export const Standard = Template.bind({});
+
+Standard.args = {
   name: "Standard Coffee",
   price: "2.50",
-  onAddToCart: '{action("Add to cart clicked")}',
   imageUrl: "https://source.unsplash.com/tNALoIZhqVM/200x100/",
-};
-standard.argTypes = {
-  name: {
-    control: {
-      type: "text",
-    },
-  },
-  price: {
-    control: {
-      type: "number",
-    },
-  },
-  onAddToCart: {
-    control: {
-      type: "function",
-    },
-  },
-  imageUrl: {
-    control: {
-      type: "text",
-    },
-  },
+  isSoldOut: false,
+  onAddToCart: action("Add to cart clicked"),
 };

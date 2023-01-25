@@ -17,3 +17,10 @@
 .card small::before {
   content: "$";
 }
+
+.card button[disabled] {
+  background-color: #bbb;
+}
+.card button[disabled]:hover {
+  pointer-events: none;
+}
