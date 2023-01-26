@@ -2,16 +2,41 @@ import PropTypes from "prop-types";
 
 import "./style.css";
 
-const ProductListItem = ({ name, price, imageUrl, onAddToCart, isSoldOut }) => {
+const Heading = ({ children }) => {
+  return <h2>{children}</h2>;
+};
+
+const Card = ({ children, highlight }) => {
+  const cardClassName = highlight ? "card sale" : "card";
+};
+
+const Text = ({ children }) => {
+  return <span>{children}</span>;
+};
+
+const Button = ({ onClick, children }) => {
+  return <button onClick={onClick}>{children}</button>;
+};
+
+const ProductListItem = ({
+  name,
+  price,
+  imageUrl,
+  onAddToCart,
+  isSoldOut,
+  isOnSale,
+}) => {
   return (
-    <div className="card">
-      <h2>{name}</h2>
+    <Card highlight={isOnSale}>
+      <Heading>
+        {name} {isOnSale && "(On Sale)"}
+      </Heading>
       <img src={imageUrl} alt="" />
-      <small>{price}</small>
-      <button onClick={onAddToCart} disabled={isSoldOut}>
-        Add to Cart
-      </button>
-    </div>
+      <Text>{price}</Text>
+      <Button onClick={onAddToCart} disabled={isSoldOut}>
+        {isSoldOut ? "Sold Out" : "Add to Cart"}
+      </Button>
+    </Card>
   );
 };
 
@@ -21,6 +46,7 @@ ProductListItem.propTypes = {
   imageUrl: PropTypes.string,
   onAddToCart: PropTypes.func,
   isSoldOut: PropTypes.bool,
+  isOnSale: PropTypes.bool,
 };
 
 export { ProductListItem };
