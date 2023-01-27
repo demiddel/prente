@@ -21,5 +21,28 @@ Standard.args = {
   price: "2.50",
   imageUrl: "https://source.unsplash.com/tNALoIZhqVM/200x100/",
   isSoldOut: false,
+  isOnSale: false,
+  onAddToCart: action("Add to cart clicked"),
+};
+
+export const SoldOut = Template.bind({});
+
+SoldOut.args = {
+  name: "Standard Coffee",
+  price: "2.50",
+  imageUrl: "https://source.unsplash.com/tNALoIZhqVM/200x100/",
+  isSoldOut: true,
+  isOnSale: false,
+  onAddToCart: action("Add to cart clicked"),
+};
+
+export const OnSale = Template.bind({});
+
+OnSale.args = {
+  name: "Standard Coffee",
+  price: "2.50",
+  imageUrl: "https://source.unsplash.com/tNALoIZhqVM/200x100/",
+  isSoldOut: false,
+  isOnSale: true,
   onAddToCart: action("Add to cart clicked"),
 };

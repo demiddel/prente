@@ -8,14 +8,20 @@ const Heading = ({ children }) => {
 
 const Card = ({ children, highlight }) => {
   const cardClassName = highlight ? "card sale" : "card";
+
+  return <div className={cardClassName}>{children}</div>;
 };
 
 const Text = ({ children }) => {
   return <span>{children}</span>;
 };
 
-const Button = ({ onClick, children }) => {
-  return <button onClick={onClick}>{children}</button>;
+const Button = ({ onClick, children, disabled }) => {
+  return (
+    <button onClick={onClick} disabled={disabled}>
+      {children}
+    </button>
+  );
 };
 
 const ProductListItem = ({
