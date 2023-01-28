@@ -1,28 +1,9 @@
 import PropTypes from "prop-types";
 
-import "./style.css";
-
-const Heading = ({ children }) => {
-  return <h2>{children}</h2>;
-};
-
-const Card = ({ children, highlight }) => {
-  const cardClassName = highlight ? "card sale" : "card";
-
-  return <div className={cardClassName}>{children}</div>;
-};
-
-const Text = ({ children }) => {
-  return <span>{children}</span>;
-};
-
-const Button = ({ onClick, children, disabled }) => {
-  return (
-    <button onClick={onClick} disabled={disabled}>
-      {children}
-    </button>
-  );
-};
+import { Text } from "../../atoms/Text";
+import { Button } from "../../atoms/Button";
+import { Header } from "../../atoms/Header";
+import { Card } from "../../atoms/Card";
 
 const ProductListItem = ({
   name,
@@ -34,9 +15,9 @@ const ProductListItem = ({
 }) => {
   return (
     <Card highlight={isOnSale}>
-      <Heading>
+      <Header>
         {name} {isOnSale && "(On Sale)"}
-      </Heading>
+      </Header>
       <img src={imageUrl} alt="" />
       <Text>{price}</Text>
       <Button onClick={onAddToCart} disabled={isSoldOut}>

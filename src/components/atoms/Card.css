@@ -1,9 +1,17 @@
 .card {
+  background-color: var(--background);
+  color: var(--primary);
+
   display: flex;
   flex-direction: column;
 
-  border: 1px solid #ededed;
-  padding: 8px;
+  border: var(--border-default);
+  border-color: var(--light);
+  border-radius: var(--radius-default);
+  box-shadow: var(--shadow-default);
+
+  padding: var(--spacing-medium);
+  margin: var(--spacing-large);
   max-width: 240px;
 }
 

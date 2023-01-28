@@ -4,6 +4,13 @@ export const statusTypes = {
   loaded: "loaded",
 };
 
+const Loading = () => {
+  return <div>Loading ...</div>;
+};
+const Error = ({ message }) => {
+  return <div>Error: {message}</div>;
+};
+
 const ProductList = (status, ...otherProps) => {
   if (status === statusTypes.loading) {
     return <Loading />;

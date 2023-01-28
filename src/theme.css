@@ -1,0 +1,10 @@
+:root {
+  --background: #fff;
+  --text: #222;
+  --border-default: solid 1px #ededed;
+  --font-sm: 12px;
+  --spacing-sm: 4px;
+  --spacing-xlarge: 48px;
+  --shadow-default: 10px 9px 33px -17px rgba(0, 0, 0, 0.75);
+  --radius-default: 8px;
+}
