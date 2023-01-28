@@ -23,7 +23,7 @@ it("should call the callback when button Add to Cart is pressed", () => {
   render(<Standard onAddToCard={onAddToCardSpy} />);
 
   const buttonElement = screen.getByRole("button");
-  //   buttonElement.click();
+  buttonElement.click();
 
   expect(buttonElement.textContent).toEqual("Add to Cart");
   //   expect(onAddToCardSpy).toHaveBeenCalled();

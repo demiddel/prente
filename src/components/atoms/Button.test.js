@@ -5,5 +5,8 @@ it("should click on the button", () => {
   const onClickSpy = jest.fn();
   render(<Button onClick={onClickSpy} />);
 
-  // expect(screen.geb)
+  const buttonElement = screen.getByRole("button");
+  buttonElement.click();
+
+  expect(onClickSpy).toHaveBeenCalled();
 });
