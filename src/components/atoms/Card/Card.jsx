@@ -1,4 +1,4 @@
-import "../../theme.css";
+import "../../../theme.css";
 import "./Card.css";
 
 const Card = ({ children, highlight }) => {

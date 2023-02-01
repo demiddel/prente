@@ -6,11 +6,17 @@
 //   <ProductListItem />
 // ));
 
-// Component Story format (recommended way)
+// Component Story Format (recommended way)
+import base from "paths.macro";
+import { atomicDir } from "../../../utils/atomicDir";
+
 import { ProductListItem } from ".";
 import { action } from "@storybook/addon-actions";
 
-export default { title: "ProductListItem", component: ProductListItem };
+export default {
+  title: `${atomicDir(base)}/ProductListItem`,
+  component: ProductListItem,
+};
 
 const Template = (args) => <ProductListItem {...args} />;
 
