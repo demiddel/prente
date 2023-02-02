@@ -1,0 +1,3 @@
+const PaymentInfo = () => {};
+
+export { PaymentInfo };
