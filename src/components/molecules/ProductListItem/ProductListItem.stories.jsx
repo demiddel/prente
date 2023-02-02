@@ -1,4 +1,4 @@
-// // StoriesOf API
+// // StoriesOf API (deprecated)
 // import { storiesOf } from "@storybook/react";
 // import { ProductListItem } from ".";
 
