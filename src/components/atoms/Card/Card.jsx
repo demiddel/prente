@@ -4,7 +4,7 @@ import "./Card.css";
 const Card = ({ children, highlight }) => {
   const cardClassName = highlight ? "card sale" : "card";
 
-  return <div className={cardClassName}>{children}</div>;
+  return <article className={cardClassName}>{children}</article>;
 };
 
 export { Card };

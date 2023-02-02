@@ -9,9 +9,9 @@
 // Component Story Format (recommended way)
 import base from "paths.macro";
 import { atomicDir } from "../../../utils/atomicDir";
+import { action } from "@storybook/addon-actions";
 
 import { ProductListItem } from ".";
-import { action } from "@storybook/addon-actions";
 
 export default {
   title: `${atomicDir(base)}/ProductListItem`,

@@ -1,5 +1,6 @@
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  actions: { argTypesRegex: "^on[A-Z].*" },
   addons: [
     "@storybook/addon-controls",
     "@storybook/addon-links",

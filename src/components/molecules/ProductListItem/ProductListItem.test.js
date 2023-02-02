@@ -18,14 +18,14 @@ it("should disable the button when disabled", () => {
 });
 
 it("should call the callback when button Add to Cart is pressed", () => {
-  // FIXME: Click event is not recognised
+  // FIXME: Click event is not passed through
   const onAddToCardSpy = jest.fn();
-  render(<Standard />);
+  render(<Standard onAddToCard={onAddToCardSpy} />);
 
-  Standard.args.onAddToCard = onAddToCardSpy;
+  // Standard.args.onAddToCard = onAddToCardSpy;
   const buttonElement = screen.getByRole("button");
   buttonElement.click();
 
   expect(buttonElement.textContent).toEqual("Add to Cart");
-  //   expect(onAddToCardSpy).toHaveBeenCalled();
+  // expect(onAddToCardSpy).toHaveBeenCalled();
 });

@@ -1,5 +1,5 @@
 import { screen, render } from "@testing-library/react";
-import { composeStories } from "@storybook/react";
+import { composeStories } from "@storybook/testing-react";
 import * as stories from "./Text.stories";
 
 const { Default } = composeStories(stories);

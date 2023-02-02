@@ -1,14 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { composeStories } from "@storybook/testing-react";
-import * as stories from "./Header.stories";
+import * as stories from "./Card.stories";
 
 const { Default } = composeStories(stories);
 
-it("should render the header with the 'Header text' text", () => {
+it("should render the Card with the 'Some text' text", () => {
   render(<Default />);
 
-  const headerElement = screen.getByRole("heading");
+  const cardElement = screen.getByRole("article");
 
   // eslint-disable-next-line testing-library/no-node-access
-  expect(headerElement).toHaveTextContent(Default.args.children);
+  expect(cardElement).toHaveTextContent(Default.args.children);
 });
