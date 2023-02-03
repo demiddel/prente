@@ -1,14 +1,10 @@
+import { Loading } from "../../molecules/Loading";
+import { Error } from "../../molecules/Error";
+
 export const statusTypes = {
   loading: "loading",
   errored: "errored",
   loaded: "loaded",
-};
-
-const Loading = () => {
-  return <div>Loading ...</div>;
-};
-const Error = ({ message }) => {
-  return <div>Error: {message}</div>;
 };
 
 const ProductList = (status, ...otherProps) => {
@@ -16,7 +12,7 @@ const ProductList = (status, ...otherProps) => {
     return <Loading />;
   }
 
-  if (statusTypes.errored) {
+  if (status === statusTypes.errored) {
     return <Error message="Failed to load data!" />;
   }
 
