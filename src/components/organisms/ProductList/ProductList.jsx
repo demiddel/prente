@@ -7,7 +7,7 @@ export const statusTypes = {
   loaded: "loaded",
 };
 
-const ProductList = (status, ...otherProps) => {
+const ProductList = (status, data, ...otherProps) => {
   if (status === statusTypes.loading) {
     return <Loading />;
   }
@@ -15,8 +15,19 @@ const ProductList = (status, ...otherProps) => {
   if (status === statusTypes.errored) {
     return <Error message="Failed to load data!" />;
   }
+  // FIXME: Error with data loading
 
-  return <div>Product List</div>;
+  return (
+    <div>
+      <h1>Product List</h1>
+      <ul>
+        {data &&
+          data.map((item) => {
+            <li>item.id</li>;
+          })}
+      </ul>
+    </div>
+  );
 };
 
 export { ProductList };
