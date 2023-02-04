@@ -1,9 +1,10 @@
 import { createServer, Model } from "miragejs";
 
-console.log("executed");
 // eslint-disable-next-line import/no-anonymous-default-export
-export default function () {
-  createServer({
+export const makeServer = ({ environment = "test" }) => {
+  console.log("executed");
+  return createServer({
+    environment,
     models: {
       product: Model,
     },
@@ -28,4 +29,4 @@ export default function () {
       });
     },
   });
-}
+};

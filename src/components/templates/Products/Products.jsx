@@ -5,6 +5,7 @@ import {
 } from "../../organisms/ProductList/ProductList";
 
 import { getProducts } from "../../../utils/getProducts";
+import { Loading } from "../../molecules/Loading";
 
 const initialState = {
   data: [],
@@ -17,15 +18,20 @@ const Products = ({ data }) => {
   useEffect(() => {
     (async () => {
       try {
-        const data = await getProducts();
-        console.log("data products", data);
-        setProductsState({ data, status: statusTypes.loaded });
+        const products = await getProducts();
+        console.log("data products", products);
+        setProductsState({ data: products, status: statusTypes.loaded });
       } catch (error) {
         console.error(error);
         setProductsState({ data: [], status: statusTypes.error });
       }
     })();
   }, []);
+
+  // FIXME: should not be needed
+  if (productsState.status === statusTypes.loading) {
+    return <Loading message="getting products" />;
+  }
 
   return (
     <ProductList data={productsState.data} status={productsState.status} />

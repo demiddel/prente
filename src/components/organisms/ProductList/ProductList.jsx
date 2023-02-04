@@ -9,7 +9,6 @@ export const statusTypes = {
 };
 
 const ProductList = ({ status, data, ...otherProps }) => {
-  console.log("status check", status);
   if (status === statusTypes.loading) {
     return <Loading message={"loading data"} />;
   }
@@ -17,9 +16,6 @@ const ProductList = ({ status, data, ...otherProps }) => {
   if (status === statusTypes.errored) {
     return <Error message="Failed to load data!" />;
   }
-  // FIXME: Error with data loading
-  console.log("data productlist", data);
-  console.log("propsdata productlist", otherProps);
 
   return (
     <div>
