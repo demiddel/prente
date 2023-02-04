@@ -7,7 +7,8 @@ export const statusTypes = {
   loaded: "loaded",
 };
 
-const ProductList = (status, data, ...otherProps) => {
+const ProductList = ({ status, data, ...otherProps }) => {
+  console.log("status check", status);
   if (status === statusTypes.loading) {
     return <Loading />;
   }
@@ -16,16 +17,13 @@ const ProductList = (status, data, ...otherProps) => {
     return <Error message="Failed to load data!" />;
   }
   // FIXME: Error with data loading
+  console.log("data productlist", data);
+  console.log("propsdata productlist", otherProps);
 
   return (
     <div>
       <h1>Product List</h1>
-      <ul>
-        {data &&
-          data.map((item) => {
-            <li>item.id</li>;
-          })}
-      </ul>
+      <ul>{data ? data.map((item) => <li>{item.name}</li>) : null}</ul>
     </div>
   );
 };

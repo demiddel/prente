@@ -1,20 +1,31 @@
-import { createServer } from "miragejs";
+import { createServer, Model } from "miragejs";
 
-const server = () => {
+console.log("executed");
+// eslint-disable-next-line import/no-anonymous-default-export
+export default function () {
   createServer({
+    models: {
+      product: Model,
+    },
+
     routes() {
-      this.get("/api/products", () => ({
-        data: [
-          {
-            id: 1,
-            name: "Mocha",
-            price: 3.5,
-            imageUrl: "http://source.unsplash.com/tNALoIZhqVM/200x100/",
-          },
-        ],
-      }));
+      this.namespace = "api";
+
+      this.get("/products");
+    },
+
+    seeds(server) {
+      server.create("product", {
+        name: "Mocha",
+        price: 3.5,
+        imageUrl: "http://source.unsplash.com/tNALoIZhqVM/200x100/",
+      });
+      server.create("product", {
+        name: "Sencha",
+        price: 3.75,
+        imageUrl:
+          "https://images.unsplash.com/38/QoR8Bv1S2SEqH6UcSJCA_Tea.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&q=100",
+      });
     },
   });
-};
-
-export default server;
+}

@@ -1,4 +1,4 @@
 const Loading = ({ message }) => {
-  return <div>{message}</div>;
+  return <div>Loading: {message}</div>;
 };
 export { Loading };

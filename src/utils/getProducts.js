@@ -4,6 +4,7 @@ const getProducts = async () => {
   try {
     const productsFetch = await fetch("/api/products");
     const productsResponse = await productsFetch.json();
+    console.log("response called", productsResponse);
 
     return {
       data: productsResponse.data,

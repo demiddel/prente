@@ -7,7 +7,7 @@ const { Default } = composeStories(stories);
 it("should render a Loading component", () => {
   render(<Default />);
   // eslint-disable-next-line testing-library/no-node-access
-  const element = screen.getByText(Default.args.message);
+  const element = screen.getByText(`Loading: ${Default.args.message}`);
 
   expect(element).toBeDefined();
 });
