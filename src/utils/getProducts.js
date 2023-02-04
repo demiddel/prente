@@ -1,15 +1,7 @@
 import { statusTypes } from "../components/organisms/ProductList/ProductList";
-import { createServer } from "miragejs";
+import { makeServer } from "../server";
 
-createServer({
-  routes() {
-    this.get("/api/users", () => [
-      { id: "1", name: "Luke" },
-      { id: "2", name: "Leia" },
-      { id: "3", name: "Anakin" },
-    ]);
-  },
-});
+makeServer({ environment: "development" });
 
 const getProducts = async () => {
   try {
@@ -18,7 +10,7 @@ const getProducts = async () => {
     console.log("response called", productsResponse);
 
     return {
-      data: productsResponse.data,
+      data: productsResponse.products,
       status: statusTypes.loaded,
     };
   } catch (error) {

@@ -19,8 +19,7 @@ const Products = ({ data }) => {
     (async () => {
       try {
         const products = await getProducts();
-        console.log("data products", products);
-        setProductsState({ data: products, status: statusTypes.loaded });
+        setProductsState({ data: products.data, status: statusTypes.loaded });
       } catch (error) {
         console.error(error);
         setProductsState({ data: [], status: statusTypes.error });
