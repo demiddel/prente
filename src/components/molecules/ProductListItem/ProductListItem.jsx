@@ -19,7 +19,7 @@ const ProductListItem = ({
         {name} {isOnSale && "(On Sale)"}
       </Header>
       <img src={imageUrl} alt="" />
-      <Text>{price}</Text>
+      <Text>Price: {price}</Text>
       <Button onClick={onAddToCart} disabled={isSoldOut}>
         {isSoldOut ? "Sold Out" : "Add to Cart"}
       </Button>

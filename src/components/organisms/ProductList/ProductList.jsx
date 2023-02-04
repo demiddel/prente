@@ -1,5 +1,6 @@
 import { Loading } from "../../molecules/Loading";
 import { Error } from "../../molecules/Error";
+import { ProductListItem } from "../../molecules/ProductListItem";
 
 export const statusTypes = {
   loading: "loading",
@@ -10,7 +11,7 @@ export const statusTypes = {
 const ProductList = ({ status, data, ...otherProps }) => {
   console.log("status check", status);
   if (status === statusTypes.loading) {
-    return <Loading />;
+    return <Loading message={"loading data"} />;
   }
 
   if (status === statusTypes.errored) {
@@ -23,7 +24,9 @@ const ProductList = ({ status, data, ...otherProps }) => {
   return (
     <div>
       <h1>Product List</h1>
-      <ul>{data ? data.map((item) => <li>{item.name}</li>) : null}</ul>
+      <section>
+        {data ? data.map((item) => <ProductListItem {...item} />) : null}
+      </section>
     </div>
   );
 };
