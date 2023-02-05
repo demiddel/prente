@@ -26,4 +26,6 @@ jobs:
         run: npm version ${NEW_VERSION}
 
       - name: Commit and push changes
-        run: git push origin main
+        run: |
+          git commit -am 'chore(version): update version'
+          git push origin main
