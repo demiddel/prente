@@ -68,6 +68,11 @@
     "prop-types": "^15.8.1",
     "webpack": "^5.75.0"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint --edit $1"
+    }
+  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
