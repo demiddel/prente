@@ -1,0 +1,29 @@
+name: Pull Request Auto Version Update
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  Create-and-update-version:
+    name: Create and Update Version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          ref: ${{ github.head_ref }}
+      - run: npm help
+
+      - name: Install dependencies
+        run: npm i -g conventional-changelog conventional-recommended-bump
+
+      - name: Determine new version
+        run: |
+          export NEW_VERSION=$(conventional-changelog -p conventional-recommended-bump -i CHANGELOG.md -s -r 0)
+
+      - name: Update package.json
+        run: npm version ${NEW_VERSION}
+
+      - name: Commit and push changes
+        run: git push origin main
