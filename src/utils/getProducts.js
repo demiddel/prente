@@ -1,7 +1,4 @@
 import { statusTypes } from "../components/organisms/ProductList/ProductList";
-import { makeServer } from "../server";
-
-makeServer({ environment: "development" });
 
 const getProducts = async () => {
   try {
