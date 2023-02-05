@@ -1,7 +1,6 @@
 {
-  "name": "rocket-coffee",
+  "name": "@demiddel/ui",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -62,9 +61,21 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "commitlint": "^17.4.2",
+    "husky": "^8.0.3",
     "miragejs": "^0.1.47",
     "paths.macro": "^3.0.1",
     "prop-types": "^15.8.1",
     "webpack": "^5.75.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
