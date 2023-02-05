@@ -2,6 +2,7 @@ name: Pull Request Auto Version Update
 on:
   pull_request:
     branches: [main]
+    types: [opened]
 
 jobs:
   Create-and-update-version:
@@ -27,5 +28,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git commit -am 'chore(version): update version'
-          git push origin main
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m 'chore(version): update version'
+          git push
