@@ -14,8 +14,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "prepare": "husky install",
-    "pre-commit": "npm test && eslint"
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
