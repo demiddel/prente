@@ -68,11 +68,6 @@
     "prop-types": "^15.8.1",
     "webpack": "^5.75.0"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
