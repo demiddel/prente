@@ -12,8 +12,15 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
           package-name: standard-version
-      - uses: actions/checkout@v2
-        # these if statements ensure that a publication only occurs when
-        # a new release is created:
-        if: ${{ steps.release.outputs.release_created }}
-        # TODO: add steps for publishing package
+      - uses: actions/checkout@v3
+         - run: |
+             npm config set //npm.pkg.github.com/:_authToken $GITHUB_NPM_AUTH_TOKEN
+             npm install
+             npm run build
+             npm publish
+            env:
+              GITHUB_NPM_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+         # these if statements ensure that a publication only occurs when
+         # a new release is created:
+         if: ${{ steps.release.outputs.release_created }}
+
