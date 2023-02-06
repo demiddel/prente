@@ -16,7 +16,7 @@ jobs:
       - run: npm help
 
       - name: Install dependencies
-        run: npm i -g conventional-changelog conventional-recommended-bump
+        run: npm i -g conventional-changelog-cli conventional-recommended-bump
 
       - name: Determine new version
         run: |
