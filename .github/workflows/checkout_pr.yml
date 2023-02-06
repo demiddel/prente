@@ -20,7 +20,7 @@ jobs:
 
       - name: Determine new version
         run: |
-          export NEW_VERSION=$(conventional-changelog -p conventional-recommended-bump -i CHANGELOG.md -s)
+          export NEW_VERSION=$(conventional-changelog -p conventional-recommended-bump -i CHANGELOG.md -s -u)
 
       - name: Update package.json
         run: npm version ${NEW_VERSION}
