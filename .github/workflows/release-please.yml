@@ -11,6 +11,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
+          bump-minor-pre-major: true
+          bump-patch-for-minor-pre-major: true
           package-name: standard-version
         if: ${{ steps.release.outputs.release_created }}
       - uses: actions/checkout@v3
