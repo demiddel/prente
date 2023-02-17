@@ -63,7 +63,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
     "babel-plugin-named-exports-order": "^0.0.2",
-    "commitlint": "^17.4.2",
+    "commitlint": "^17.4.4",
     "husky": "^8.0.0",
     "miragejs": "^0.1.47",
     "paths.macro": "^3.0.1",
