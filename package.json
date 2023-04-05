@@ -68,7 +68,7 @@
     "miragejs": "^0.1.47",
     "paths.macro": "^3.0.1",
     "prop-types": "^15.8.1",
-    "webpack": "^5.75.0"
+    "webpack": "^5.78.0"
   },
   "commitlint": {
     "extends": [
