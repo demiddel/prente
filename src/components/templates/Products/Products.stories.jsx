@@ -9,5 +9,18 @@ export default {
 };
 
 const Default = (args) => <Products {...args} />;
+const Standard = Default.bind({});
+Standard.args = {data: {
+  products: [
+    {
+      id: "pixel-6",
+      name: "Pixel 6",
+      price: 980,
+      imageUrl: "pixel.jpg",
+      isSoldOut: false,
+      isOnSale: true,
+    }, ,
+  ]
+}}
 
-export { Default };
+export { Standard };

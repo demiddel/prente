@@ -22,7 +22,7 @@ const ProductList = ({ status, data, ...otherProps }) => {
       <h1>Product List</h1>
       <section>
         {data
-          ? data.map((item) => <ProductListItem {...item} key={item.id} />)
+          ? data.products.map((item) => <ProductListItem {...item} key={item.id} />)
           : null}
       </section>
     </div>

@@ -8,7 +8,7 @@ import { getProducts } from "../../../utils/getProducts";
 import { Loading } from "../../molecules/Loading";
 
 const initialState = {
-  data: [],
+  data: {products: []},
   status: statusTypes.loading,
 };
 
@@ -18,8 +18,8 @@ const Products = ({ data }) => {
   useEffect(() => {
     (async () => {
       try {
-        const products = await getProducts();
-        setProductsState({ data: products.data, status: statusTypes.loaded });
+        // const products = await getProducts();
+        setProductsState({ data: data, status: statusTypes.loaded });
       } catch (error) {
         console.error(error);
         setProductsState({ data: [], status: statusTypes.error });
